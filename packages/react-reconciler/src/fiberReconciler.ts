@@ -26,6 +26,8 @@ export function updateContainer(
 	root: FiberRootNode
 ) {
 	const hostRootFiber = root.current;
+	// eg. render(<App />) App 对应的 lelement 就是这个 element,则 updata 就是对应的 ReactElement
+	//
 	const update = createUpdate<ReactElementType | null>(element);
 	// 添加 Update 到 updateQueue
 	enqueueUpdate(
