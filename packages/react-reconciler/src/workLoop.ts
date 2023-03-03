@@ -7,6 +7,9 @@ let workInProgress: FiberNode | null = null;
 
 // 创建 workInProgress
 function prepareFreshStack(root: FiberRootNode) {
+	// 根fiberRootNode ---- hostRootFiber  ---- App
+	// 这里是 hostRootFiber 的workInProgress
+	// 此时 workInProgress 也就是 root.current.alternate
 	workInProgress = createWorkInProgress(root.current, {});
 }
 export function scheduleUpdateOnFiber(fiber: FiberNode) {
@@ -45,6 +48,12 @@ function renderRoot(root: FiberRootNode) {
 			workInProgress = null;
 		}
 	} while (1);
+
+	const finishedWork = root.current.alternate;
+	root.finishedWork = finishedWork;
+
+	// 根据 wip fiberNode 树中的 flags
+	commitRoot(root);
 }
 
 function workLoop() {

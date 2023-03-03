@@ -5,6 +5,11 @@ import { processUpdateQueue, UpdateQueue } from './updateQueue';
 import { HostComponent, HostRoot, HostText } from './workTags';
 
 // 递归中的递阶段
+/**
+ * @description: 递 fiber
+ * @param {FiberNode} wip
+ * @return {*} 子 fiber
+ */
 export const beginWork = (wip: FiberNode) => {
 	// 比较 返回子 fiberNode
 	switch (wip.tag) {
@@ -44,6 +49,7 @@ function updateHostRoot(wip: FiberNode) {
 function updateHostComponent(wip: FiberNode) {
 	// 创建子 fiberNode
 	const nextProps = wip.pendingProps;
+	// nextChildren  --->  reactElement
 	const nextChildren = nextProps.children;
 	// 返回子 fiberNode
 	reconcileChildren(wip, nextChildren);

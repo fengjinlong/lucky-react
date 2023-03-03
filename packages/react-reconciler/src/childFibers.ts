@@ -33,6 +33,8 @@ function ChildReconciler(shouldTrackEffects: boolean) {
 		}
 		return fiber;
 	}
+
+	//
 	return function reconcileChildFibers(
 		returnFiber: FiberNode,
 		currentFiber: FiberNode | null,
