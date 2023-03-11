@@ -1,4 +1,4 @@
-import { Contanier } from 'hostConfig';
+import { Container } from 'hostConfig';
 import { Key, Props, ReactElementType } from 'shared/ReactTypes';
 import { Flags, NoFlags } from './fiberFlags';
 import { FunctionComponent, HostComponent, WorkTag } from './workTags';
@@ -58,10 +58,10 @@ export class FiberNode {
 
 // 整个应用的根节点  不是 根 dom
 export class FiberRootNode {
-	container: Contanier;
+	container: Container;
 	current: FiberNode;
 	finishedWork: FiberNode | null;
-	constructor(container: Contanier, hostRootFiber: FiberNode) {
+	constructor(container: Container, hostRootFiber: FiberNode) {
 		this.container = container;
 		this.current = hostRootFiber;
 		hostRootFiber.stateNode = this;

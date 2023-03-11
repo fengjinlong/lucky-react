@@ -1,4 +1,4 @@
-import { Contanier } from 'hostConfig';
+import { Container } from 'hostConfig';
 import { ReactElementType } from 'shared/ReactTypes';
 import { FiberNode, FiberRootNode } from './fiber';
 import {
@@ -14,7 +14,7 @@ import { HostRoot } from './workTags';
 // ReactDOM.createRoot(document.getElementById('root')).render();
 
 // ReactDOM.createRoot(document.getElementById('root'))
-export function createContainer(container: Contanier) {
+export function createContainer(container: Container) {
 	const hostRootFiber = new FiberNode(HostRoot, {}, null);
 	const root = new FiberRootNode(container, hostRootFiber);
 	hostRootFiber.updateQueue = createUpdateQueue();
