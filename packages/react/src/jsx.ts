@@ -27,6 +27,8 @@ const ReactElement = function (
 	return element;
 };
 export const jsx = (type: ElementType, config: any, ...mayChildren: any) => {
+	console.log('type=', type, 'config=', config, 'mayChildren=', mayChildren);
+
 	let key: Key = null;
 	const props: Props = {};
 	let ref: Ref = null;
@@ -58,6 +60,8 @@ export const jsx = (type: ElementType, config: any, ...mayChildren: any) => {
 };
 
 export const jsxDEV = (type: ElementType, config: any) => {
+	console.log('type-', type, 'config-', config);
+
 	let key: Key = null;
 	const props: Props = {};
 	let ref: Ref = null;

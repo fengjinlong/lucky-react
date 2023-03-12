@@ -1,8 +1,8 @@
 import {
 	createContainer,
 	updateContainer
-} from 'react-reconciler/src/fiberReconciler';
-import { ReactElementType } from 'shared/ReactTypes';
+} from '../../react-reconciler/src/fiberReconciler.js';
+import { ReactElementType } from '../../shared/ReactTypes';
 import { Container } from './hostConfig';
 
 // ReactDom.createRoot(contains).render(App);
